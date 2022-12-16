@@ -57,8 +57,8 @@ pub fn macro_impl(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
                 if s.st_type() == 0 || goblin::elf::sym::type_to_str(s.st_type()) == "FILE" {
                     return None;
                 }
-                match elf.strtab.get(s.st_name) {
-                    Some(Ok(name)) if name != "" => {
+                match elf.strtab.get_at(s.st_name) {
+                    Some(name) if name != "" => {
                         Some(syn::Ident::new(name, proc_macro2::Span::call_site()))
                     }
                     _ => None,

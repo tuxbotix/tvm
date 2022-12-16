@@ -16,21 +16,21 @@
 # under the License.
 
 [package]
+authors = ["TVM Contributors"]
+build = "build.rs"
+edition = "2021"
+license = "Apache-2.0"
 name = "basics"
 version = "0.0.0"
-authors = ["TVM Contributors"]
-license = "Apache-2.0"
-build = "build.rs"
-edition = "2018"
 
 [dependencies]
-ndarray = "0.12"
-tvm = { path = "../../" }
+ndarray = {workspace = true}
+tvm = {path = "../../"}
 
 [build-dependencies]
-anyhow = "^1.0"
+anyhow = {workspace = true}
 
 [features]
-default = ["cpu"]
 cpu = []
+default = ["cpu"]
 gpu = []

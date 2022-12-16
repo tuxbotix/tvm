@@ -16,87 +16,86 @@
 # under the License.
 
 [package]
-name = "tvm-rt"
-version = "0.1.0-alpha"
-license = "Apache-2.0"
-description = "Rust bindings for the TVM runtime API."
-repository = "https://github.com/apache/tvm"
-homepage = "https://github.com/apache/tvm"
-readme = "README.md"
-keywords = ["rust", "tvm"]
-categories = ["api-bindings", "science"]
 authors = ["TVM Contributors"]
-edition = "2018"
+categories = ["api-bindings", "science"]
+description = "Rust bindings for the TVM runtime API."
+edition = "2021"
+homepage = "https://github.com/apache/tvm"
+keywords = ["rust", "tvm"]
+license = "Apache-2.0"
+name = "tvm-rt"
+readme = "README.md"
+repository = "https://github.com/apache/tvm"
+version = "0.1.0-alpha"
 
 [features]
+blas = ["ndarray/blas"]
 default = ["dynamic-linking"]
 dynamic-linking = ["tvm-sys/dynamic-linking"]
-static-linking = ["tvm-sys/static-linking"]
-standalone = ["tvm-sys/runtime-only"]
 runtime-only = ["tvm-sys/runtime-only"]
-blas = ["ndarray/blas"]
+standalone = ["tvm-sys/runtime-only"]
+static-linking = ["tvm-sys/static-linking"]
 # Enabling any of the following features is like setting the value to "ON" in config.cmake.
-use-cuda = ["tvm-sys/use-cuda"]
-use-opencl = ["tvm-sys/use-opencl"]
-use-vulkan = ["tvm-sys/use-vulkan"]
-use-metal = ["tvm-sys/use-metal"]
-use-rocm = ["tvm-sys/use-rocm"]
-use-hexagon-device = ["tvm-sys/use-hexagon-device"]
-use-rpc = ["tvm-sys/use-rpc"]
-use-threads = ["tvm-sys/use-threads"]
-use-llvm = ["tvm-sys/use-llvm"]
-use-stackvm-runtime = ["tvm-sys/use-stackvm-runtime"]
-use-graph-runtime = ["tvm-sys/use-graph-runtime"]
-use-graph-runtime-debug = ["tvm-sys/use-graph-runtime-debug"]
-use-openmp = ["tvm-sys/use-openmp"]
-use-relay-debug = ["tvm-sys/use-relay-debug"]
-use-rtti = ["tvm-sys/use-rtti"]
-use-mscv-mt = ["tvm-sys/use-mscv-mt"]
-use-micro = ["tvm-sys/use-micro"]
-use-install-dev = ["tvm-sys/use-install-dev"]
+build-static-runtime = ["tvm-sys/build-static-runtime"]
 hide-private-symbols = ["tvm-sys/hide-private-symbols"]
-use-fallback-stl-map = ["tvm-sys/use-fallback-stl-map"]
-use-ethosn = ["tvm-sys/use-ethosn"]
-use-index-default-i64 = ["tvm-sys/use-index-default-i64"]
-use-tf-tvmdsoop = ["tvm-sys/use-tf-tvmdsoop"]
-use-byodt-posit = ["tvm-sys/use-byodt-posit"]
-use-mkl = ["tvm-sys/use-mkl"]
-use-mkldnn = ["tvm-sys/use-mkldnn"]
-use-dnnl-codegen = ["tvm-sys/use-dnnl-codegen"]
-use-cudnn = ["tvm-sys/use-cudnn"]
-use-cublas = ["tvm-sys/use-cublas"]
-use-thrust = ["tvm-sys/use-thrust"]
-use-miopen = ["tvm-sys/use-miopen"]
-use-rocblas = ["tvm-sys/use-rocblas"]
-use-sort = ["tvm-sys/use-sort"]
-use-nnpack = ["tvm-sys/use-nnpack"]
-use-random = ["tvm-sys/use-random"]
-use-micro-standalone-runtime = ["tvm-sys/use-micro-standalone-runtime"]
-use-cpp-rpc = ["tvm-sys/use-cpp-rpc"]
-use-tflite = ["tvm-sys/use-tflite"]
-use-coreml = ["tvm-sys/use-coreml"]
-use-target-onnx = ["tvm-sys/use-target-onnx"]
 use-arm-compute-lib = ["tvm-sys/use-arm-compute-lib"]
 use-arm-compute-lib-graph-runtime = ["tvm-sys/use-arm-compute-lib-graph-runtime"]
+use-byodt-posit = ["tvm-sys/use-byodt-posit"]
+use-coreml = ["tvm-sys/use-coreml"]
+use-cpp-rpc = ["tvm-sys/use-cpp-rpc"]
+use-cublas = ["tvm-sys/use-cublas"]
+use-cuda = ["tvm-sys/use-cuda"]
+use-cudnn = ["tvm-sys/use-cudnn"]
+use-dnnl-codegen = ["tvm-sys/use-dnnl-codegen"]
+use-ethosn = ["tvm-sys/use-ethosn"]
+use-fallback-stl-map = ["tvm-sys/use-fallback-stl-map"]
+use-graph-runtime = ["tvm-sys/use-graph-runtime"]
+use-graph-runtime-debug = ["tvm-sys/use-graph-runtime-debug"]
+use-hexagon-device = ["tvm-sys/use-hexagon-device"]
+use-index-default-i64 = ["tvm-sys/use-index-default-i64"]
+use-install-dev = ["tvm-sys/use-install-dev"]
+use-llvm = ["tvm-sys/use-llvm"]
+use-metal = ["tvm-sys/use-metal"]
+use-micro = ["tvm-sys/use-micro"]
+use-micro-standalone-runtime = ["tvm-sys/use-micro-standalone-runtime"]
+use-miopen = ["tvm-sys/use-miopen"]
+use-mkl = ["tvm-sys/use-mkl"]
+use-mkldnn = ["tvm-sys/use-mkldnn"]
+use-mscv-mt = ["tvm-sys/use-mscv-mt"]
+use-nnpack = ["tvm-sys/use-nnpack"]
+use-opencl = ["tvm-sys/use-opencl"]
+use-openmp = ["tvm-sys/use-openmp"]
+use-random = ["tvm-sys/use-random"]
+use-relay-debug = ["tvm-sys/use-relay-debug"]
+use-rocblas = ["tvm-sys/use-rocblas"]
+use-rocm = ["tvm-sys/use-rocm"]
+use-rpc = ["tvm-sys/use-rpc"]
+use-rtti = ["tvm-sys/use-rtti"]
+use-sort = ["tvm-sys/use-sort"]
+use-stackvm-runtime = ["tvm-sys/use-stackvm-runtime"]
+use-target-onnx = ["tvm-sys/use-target-onnx"]
 use-tensorrt-codegen = ["tvm-sys/use-tensorrt-codegen"]
 use-tensorrt-runtime = ["tvm-sys/use-tensorrt-runtime"]
+use-tf-tvmdsoop = ["tvm-sys/use-tf-tvmdsoop"]
+use-tflite = ["tvm-sys/use-tflite"]
+use-threads = ["tvm-sys/use-threads"]
+use-thrust = ["tvm-sys/use-thrust"]
 use-vitis-ai = ["tvm-sys/use-vitis-ai"]
-build-static-runtime = ["tvm-sys/build-static-runtime"]
+use-vulkan = ["tvm-sys/use-vulkan"]
 
 [dependencies]
-thiserror = "^1.0"
-ndarray = "0.12"
-num-traits = "0.2"
-tvm-macros = { version = "0.1.1-alpha", path = "../tvm-macros" }
-paste = "0.1"
-mashup = "0.1"
-once_cell = "^1.3.1"
-memoffset = "0.5.6"
+mashup = {workspace = true}
+memoffset = {workspace = true}
+ndarray = {workspace = true}
+num-traits = {workspace = true}
+once_cell = {workspace = true}
+paste = {workspace = true}
+thiserror = {workspace = true}
+tvm-macros = {path = "../tvm-macros"}
 
 [dependencies.tvm-sys]
-version = "0.1.1-alpha"
 default-features = false
 path = "../tvm-sys/"
 
 [dev-dependencies]
-anyhow = "^1.0"
+anyhow = {workspace = true}

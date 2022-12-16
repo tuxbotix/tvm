@@ -16,11 +16,11 @@
 # under the License.
 
 [package]
+authors = ["TVM Contributors"]
+edition = "2021"
 name = "callback"
 version = "0.0.0"
-authors = ["TVM Contributors"]
-edition = "2018"
 
 [dependencies]
-ndarray = "0.12"
-tvm = { path = "../../" }
+ndarray = {workspace = true}
+tvm = {path = "../../"}

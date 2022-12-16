@@ -16,73 +16,73 @@
 # under the License.
 
 [package]
+authors = ["TVM Contributors"]
+description = "Low level bindings to TVM's cross language API."
+edition = "2021"
+license = "Apache-2.0"
 name = "tvm-sys"
 version = "0.1.1-alpha"
-authors = ["TVM Contributors"]
-license = "Apache-2.0"
-edition = "2018"
-description = "Low level bindings to TVM's cross language API."
 
 [features]
 default = ["dynamic-linking"]
-static-linking = []
 dynamic-linking = []
 runtime-only = []
+static-linking = []
 # Enabling any of the following features is like setting the value to "ON" in config.cmake.
-use-cuda = []
-use-opencl = []
-use-vulkan = []
-use-metal = []
-use-rocm = []
-use-hexagon-device = []
-use-rpc = []
-use-threads = []
-use-llvm = []
-use-stackvm-runtime = []
-use-graph-runtime = []
-use-graph-runtime-debug = []
-use-openmp = []
-use-relay-debug = []
-use-rtti = []
-use-mscv-mt = []
-use-micro = []
-use-install-dev = []
+build-static-runtime = []
 hide-private-symbols = []
-use-fallback-stl-map = []
-use-ethosn = []
-use-index-default-i64 = []
-use-tf-tvmdsoop = []
-use-byodt-posit = []
-use-mkl = []
-use-mkldnn = []
-use-dnnl-codegen = []
-use-cudnn = []
-use-cublas = []
-use-thrust = []
-use-miopen = []
-use-rocblas = []
-use-sort = []
-use-nnpack = []
-use-random = []
-use-micro-standalone-runtime = []
-use-cpp-rpc = []
-use-tflite = []
-use-coreml = []
-use-target-onnx = []
 use-arm-compute-lib = []
 use-arm-compute-lib-graph-runtime = []
+use-byodt-posit = []
+use-coreml = []
+use-cpp-rpc = []
+use-cublas = []
+use-cuda = []
+use-cudnn = []
+use-dnnl-codegen = []
+use-ethosn = []
+use-fallback-stl-map = []
+use-graph-runtime = []
+use-graph-runtime-debug = []
+use-hexagon-device = []
+use-index-default-i64 = []
+use-install-dev = []
+use-llvm = []
+use-metal = []
+use-micro = []
+use-micro-standalone-runtime = []
+use-miopen = []
+use-mkl = []
+use-mkldnn = []
+use-mscv-mt = []
+use-nnpack = []
+use-opencl = []
+use-openmp = []
+use-random = []
+use-relay-debug = []
+use-rocblas = []
+use-rocm = []
+use-rpc = []
+use-rtti = []
+use-sort = []
+use-stackvm-runtime = []
+use-target-onnx = []
 use-tensorrt-codegen = []
 use-tensorrt-runtime = []
+use-tf-tvmdsoop = []
+use-tflite = []
+use-threads = []
+use-thrust = []
 use-vitis-ai = []
-build-static-runtime = []
+use-vulkan = []
 
 [dependencies]
-thiserror = "^1.0"
-anyhow = "^1.0"
-ndarray = "0.12"
-enumn = "^0.1"
+anyhow = {workspace = true}
+enumn = {workspace = true}
+ndarray = {workspace = true}
+thiserror = {workspace = true}
 
 [build-dependencies]
-bindgen = { version="0.57", default-features = false, features = ["runtime"] }
-anyhow = "^1.0"
-tvm-build = "0.2.4"
+anyhow = {workspace = true}
+bindgen = {workspace = true}
+tvm-build = {workspace = true}

@@ -203,7 +203,7 @@ TVMPODValue! {
 
 #[macro_export]
 macro_rules! try_downcast {
-    ($val:ident -> $into:ty, $( |$pat:pat| { $converter:expr } ),+ ) => {
+    ($val:ident -> $into:ty, $( |$pat:pat_param| { $converter:expr } ),+ ) => {
         match $val {
             $( $pat => { Ok($converter) } )+
             _ => Err($crate::errors::ValueDowncastError {
